@@ -13,16 +13,18 @@ class tp_1:
         packet_name = ".".join(path_list[1:-1])
         class_name = os.path.basename(path).split(".")[0]
 
-        header_added = False
+        #create a csv file, if it exists:
+        if os.path.exists("tp_1.csv"):
+            with open("tp_1.csv", "a") as csv_file:
+                csv_writer = csv.writer(csv_file, delimiter=",")
+                csv_writer.writerow([path, packet_name, class_name])
 
-        #return csv file with chemin du fichier, nom du paquet and nom de la classe as headers
-        with open('tp_1.csv', 'a+', newline='') as csvfile:
-            fieldnames = ['chemin du fichier', 'nom du paquet', 'nom de la classe']
-            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-            if header_added == False:
+        else:
+            with open("tp_1.csv", "w") as csv_file:
+                fields=["chemin du ficher", "nom du paquet", "nom de la classe"]
+                writer = csv.DictWriter(csv_file, fieldnames=fields)
                 writer.writeheader()
-                header_added = True
-            writer.writerow({'chemin du fichier': path, 'nom du paquet': packet_name, 'nom de la classe': class_name})
+                writer.writerow({"chemin du ficher": path, "nom du paquet": packet_name, "nom de la classe": class_name})
 
         print(path + "," + packet_name + "," + class_name+"\n")
 
