@@ -1,6 +1,6 @@
 import sys
 
-class Nvloc:
+class nvloc:
 
     path = sys.argv[1]
 
@@ -16,6 +16,6 @@ class Nvloc:
 
 
 if __name__ == "__main__":
-    instance = Nvloc()
+    instance = nvloc()
 
     instance.nvloc(instance.path)
