@@ -26,7 +26,7 @@ class jls:
             else:
                 writer.writerow({'chemin du fichier': path, 'nom du paquet': packet_name, 'nom de la classe': class_name})
         
-        print(path + "," + packet_name + "," + class_name+"\n")
+        #print(path + "," + packet_name + "," + class_name+"\n")
 
         #if path doesnt exist
         if not pl.Path(path).exists():
