@@ -5,10 +5,9 @@ import csv
 
 class jls:
     def jls(self):
-        path = sys.argv[1]
+        path = sys.argv[1].replace('"', '')
 
-        #fix path format
-        if '\\' in path:
+        if '\\' and '"' in path:
             path = path.replace('\\', '/')
 
         path_list = path.split("/")
