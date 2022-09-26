@@ -14,7 +14,6 @@ class nvloc:
                 count += 1
         print(count)
 
-
 if __name__ == "__main__":
     instance = nvloc()
 

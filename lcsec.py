@@ -3,7 +3,7 @@ import sys
 import pathlib as pl
 import os
 import csv
-import pandas as pd
+import pandas as pd #pip install pandas 
 
 class lcsec:
 
