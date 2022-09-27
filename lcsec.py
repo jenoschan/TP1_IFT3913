@@ -3,7 +3,7 @@ import sys
 import pathlib as pl
 import os
 import csv
-import pandas as pd #pip install pandas 
+import pandas as pd
 
 class lcsec:
 
@@ -38,15 +38,19 @@ class lcsec:
 
         counts = []
         # get the number of other class mentions inside current class
-
+        visits = []
         for i in range(len(files)):
+            visited = []
             count = 0
             f = open(files[i][0], 'r')
             txt = f.read()
             f.close()
             for j in range(len(files)):
                 if j != i:
-                    count += txt.count(files[j][1])
+                    if files[j][1] in txt:
+                        count += 1
+                        visited.append(files[j][1])
+            visits.append(visited)
 
             # get the number of times the class is mentioned in other classes
 
@@ -55,7 +59,10 @@ class lcsec:
                     f = open(files[j][0], 'r')
                     txt = f.read()
                     f.close()
-                    count += txt.count(files[i][1])
+                    if files[i][1] in txt and files[j][1] not in visits[i]:
+                        count += 1
+                        if i == 4:
+                            print(files[j][0])
             counts.append(count)
         
         # adding the column to the csv
