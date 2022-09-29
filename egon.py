@@ -17,11 +17,10 @@ class egon:
             print("Path given exists")
 
         df = pd.read_csv('tp1_1.csv')
-        df = df.sort_values(by=['CSEC'], ascending=False)
+        df = df.sort_values(by=['NVLOC','CSEC'], ascending=False)
 
         for i in range(len(df)):
-            if df['CSEC'][i] >= threshold:
-                continue #continue until the first class that has a coupling lower than the threshold
-            else:
-                print(df.iloc[i-1]) #this is going to print everything that is above the threshold value
-
+            #if NVLOC AND CSEC are lower than threshold remove from csv file
+            if df['NVLOC'][i] < threshold and df['CSEC'][i] < threshold:
+                df = df.drop(i)
+        df.to_csv('tp1_1.csv', index=False)
