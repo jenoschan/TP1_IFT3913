@@ -1,0 +1,15 @@
+~~ 
+
+PARTIE 4: 
+
+Appliquez votre outil au code du https://github.com/jfree/jfreechart Téléchargez le code manuellement (votre 
+outil n’a pas besoin de faire le téléchargement automatiquement). Vous devez soumettre des fichiers CSV avec la 
+sortie d’egon pour le dossier https://github.com/jfree/jfreechart/tree/master/src/main/java pour des seuils de
+1%, 5% et 10%. 
+
+À partir de vos résultats discutez brièvement l’utilité d’egon comme détecteur de problèmes de modularité : 
+l’heuristique d’egon, semble-t-elle de vraiment trouver des classes divines? Comment pourrions-nous l’améliorer?
+Vous devez ajouter votre réponse dans un fichier de texte (voir précisions globales plus bas)
+
+~~
+
