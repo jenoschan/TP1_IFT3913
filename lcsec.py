@@ -24,8 +24,6 @@ class lcsec:
         #if csv file doesnt exist
         elif not pl.Path(csv_path).exists():
             print("CSV file given does not exist")
-        else: 
-            print("Path and CSV file given exist")
 
         #get paths and class names of files in csv
         files = []
@@ -66,6 +64,20 @@ class lcsec:
             counts.append(count)
         
         # adding the column to the csv
+
+        #if CSEC column is not in the csv file, create it and add the count to corresponding class
+        if "CSEC" not in open(csv_path).read():
+            #make copy of csv file
+            df = pd.read_csv(csv_path)
+            #add CSEC column before NVLOC
+            df.insert(3, "CSEC", counts, True)
+            #add count to corresponding class
+            for i in range(len(df)):
+                #get class name from path
+                for j in range(len(files)):
+                    if df["nom de la classe"][i] == files[j][1]:
+                        df["CSEC"][i] = counts[j]	
+                        df.at[i, "CSEC"] = counts[j]
 
         data = pd.read_csv(csv_path)
 

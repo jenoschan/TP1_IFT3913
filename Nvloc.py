@@ -32,14 +32,14 @@ class nvloc:
                     if df["nom de la classe"][i] == file_name:
                         df["NVLOC"][i] = count	
                         df.at[i, "NVLOC"] = count
-                #save changes to csv file
-                df.to_csv("tp_1.csv", index=False)
+
             else:
                 df = pd.read_csv("tp_1.csv")
                 for i in range(len(df)):
                     if df["nom de la classe"][i] == file_name:
                         df.at[i, "NVLOC"] = count
 
+            df.to_csv("tp_1.csv", index=False)
 
 if __name__ == "__main__":
     instance = nvloc()
