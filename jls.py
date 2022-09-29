@@ -1,18 +1,14 @@
+import pathlib as pl
 import os
-from queue import Empty
 import sys
 import csv
-from os import listdir
-from os.path import isfile, join
-from os import walk
 
-
-#class tp_1: that has a jls method that returns hello world
 class jls:
 
     path = sys.argv[1]
 
     def jls(self, path):
+        
         root = path.split('\\')[-1]
         content = []
         for files in os.walk(path):
@@ -32,15 +28,31 @@ class jls:
                     toAdd += candidate.pop(0) + '.'
                 else: toAdd += candidate.pop(0)
             toAdd += ',' + candidate.pop(0)
-            print(toAdd)
             result += toAdd + '\n'
 
         with open("tp_1.csv", "w") as file:
             file.write(result)
             file.close()
 
+        #if path doesnt exist
+        if not pl.Path(path).exists():
+            print("Path is in a valid format, but doesn't exist on this computer")
+            return
 
-if __name__ == "__main__":
+        for root, dirs, files in os.walk(path):
+            level = root.replace(path, '').count(os.sep)
+            #print directories
+            if level == 0:
+                print(root)
+            #TODO : fix formatting
+            indent = ' ' * 4 * (level) + "|__"
+            print('{}{}/'.format(indent, os.path.basename(root)))
+            #print files
+            subindent = ' ' * 4 * (level) + "|" + " " * 4 + "|__"
+            for f in files:
+                print('{}{}'.format(subindent, f))
+
+if __name__ == '__main__':
     Jls = jls()
 
     Jls.jls(Jls.path)
