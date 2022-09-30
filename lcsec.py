@@ -29,7 +29,7 @@ class lcsec:
 
         #get paths and class names of files in csv
         files = []
-        with open(csv_path, encoding='utf-8') as csv_file:
+        with open(csv_path) as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
             for row in csv_reader:
                 files.append((row[0], row[2][:-5]))
@@ -42,7 +42,7 @@ class lcsec:
         for i in range(len(files)):
             visited = []
             count = 0
-            f = open(files[i][0], 'r', encoding="utf-8")
+            f = open(files[i][0], 'r', encoding = 'utf-8', errors='ignore')
             txt = f.read()
             f.close()
             for j in range(len(files)):
@@ -56,7 +56,7 @@ class lcsec:
 
             for j in range(len(files)):
                 if j != i:
-                    f = open(files[j][0], 'r', encoding='utf-8')
+                    f = open(files[j][0], 'r', encoding = 'utf-8', errors='ignore')
                     txt = f.read()
                     f.close()
                     if files[i][1] in txt and files[j][1] not in visits[i]:
