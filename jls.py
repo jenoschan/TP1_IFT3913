@@ -48,7 +48,7 @@ class jls:
             indent = ' ' * 4 * (level) + "|__"
             print('{}{}/'.format(indent, os.path.basename(root)))
             #print files
-            subindent = ' ' * 4 * (level+1) + "|__" #' ' * 4 * (level)+ "|" + " " * 4 + "|__"
+            subindent = ' ' * 4 * (level+1) + "|__"
             for f in files:
                 print('{}{}'.format(subindent, f))
 
