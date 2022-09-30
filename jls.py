@@ -14,7 +14,8 @@ class jls:
         for files in os.walk(path):
             if len(files[2]) > 0:
                 for file in files[2]:
-                    content.append(files[0] + '\\' + file)
+                    if file[-5:] == '.java':
+                        content.append(files[0] + '\\' + file)
 
         result = "chemin du ficher,nom du paquet,nom de la classe\n"
         for item in content:
