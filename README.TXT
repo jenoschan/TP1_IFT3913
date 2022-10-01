@@ -8,7 +8,9 @@ https://github.com/jenoschan/TP1_IFT3913
 -------------------------------------------------------------------------------------------------------------
 pour utiliser jls.exe: 
 
-rouler le programme avec le dossier contenant les fichiers code comme entrée. exemple : start jls.exe java
+rouler le programme avec le dossier contenant les fichiers code comme entrée.
+
+exemple de commande : start jls.exe java
 -------------------------------------------------------------------------------------------------------------
 pour utiliser nvloc.exe:
 
@@ -17,11 +19,15 @@ roulez nvloc.exe en fournissant comme seule commande un fichier .java dans le do
 le nvloc pour chaque fichier .java dans le dossier dans la colonne nvloc de tp_1.csv en même temps d'imprimer le nvloc pour le fichier
 fournie comme argument dans le terminal. (la colonne nvloc est écrite dans le tp_1.csv pour ensuite être utilisée par egon.exe.
 
+exemple de commande: start nvloc.exe "C:\Users\charb\OneDrive\Desktop\qualite\Tp1_final\TP1_IFT3913-main\final\java\org\jfree\chart\annotations\AbstractAnnotation.java"
+
 !! ATTENTION !! toujours rouler nvloc.exe avant lcsec.exe pour avoir les bonnes titres de colonnes pour les fichier csv générés par egon.exe
 -------------------------------------------------------------------------------------------------------------------------------
 pour utiliser lcsec.exe:
 
 rouler le programme avec le dossier contenant les ficheirs java comme premier argument puis le fichier tp_1.csv généré par jls.exe comme deuxième argument
+
+esemple de commande: start lcsec.exe java tp_1.csv
 
 !! ATTENTION !! lcsec.exe prend du temps pour rouler. SVP attendre environ 3 minutes avant d'ouvrir tp_1.csv pour voir la colonne csec s'ajouter
 --------------------------------------------------------------------------------------------------------------------------------------------------
