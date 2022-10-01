@@ -43,12 +43,12 @@ class egon:
         desired_path = ".\TP1_IFT3913\PARTIE4"
         if not pl.Path("tp_1B.csv").exists():
             with open('tp_1B.csv', 'a') as f:
-                f.write("chemin du ficher,nom du paquet,nom de la classe, CSEC, NVLOC\n")
+                f.write("chemin du ficher,nom du paquet,nom de la classe, NVLOC, CSEC\n")
                 df3.to_csv(f, header=False, index=False)
         else:
             os.remove("tp_1B.csv")
             with open('tp_1B.csv', 'a') as f:
-                f.write("chemin du ficher,nom du paquet,nom de la classe, CSEC, NVLOC\n")
+                f.write("chemin du ficher,nom du paquet,nom de la classe, NVLOC, CSEC\n")
                 df3.to_csv(f, header=False, index=False)
             
 
