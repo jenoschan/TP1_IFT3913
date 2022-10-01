@@ -13,7 +13,7 @@ class nvloc:
         #get file name from path 
         file_name = pl.Path(path).name
         #open file and read it
-        source_file = open(path, "r", encoding='utf-8')
+        source_file = open(path, "r", encoding='utf-8',errors='ignore')
         
         #count the amount of non-empty lines for all paths in tp_1.csv
         count = 0
@@ -50,11 +50,11 @@ class nvloc:
             df.to_csv("tp_1.csv", index=False)
             
             
-        count_others= 0
         #iterate through all paths in tp_1.csv
         for i in range(len(df)):
+            count_others= 0
             #open path
-            source_file = open(df["chemin du ficher"][i], "r", encoding = 'utf-8')
+            source_file = open(df["chemin du ficher"][i], "r", encoding='utf-8',errors='ignore')
             #count the amount of non-empty lines for all paths in tp_1.csv
             for line in source_file:
                 if line.strip():
