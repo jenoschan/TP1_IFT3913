@@ -31,3 +31,10 @@ esemple de commande: start lcsec.exe java tp_1.csv
 
 !! ATTENTION !! lcsec.exe prend du temps pour rouler. SVP attendre environ 3 minutes avant d'ouvrir tp_1.csv pour voir la colonne csec s'ajouter
 --------------------------------------------------------------------------------------------------------------------------------------------------
+pour utiliser egon.exe:
+
+assurez vous d'avoir roulé les programmes dans l'ordre suivant: jls.exe, nvloc.exe, lcsec.exe
+
+executez egon.exe avec le folder avec toutes les fichier java comme premier argument puis le seuil % comme deusieme argument
+
+egon.exe va générer le fichier tp_1B qui va contenir les classes supérieures au seuil entré en parametre
